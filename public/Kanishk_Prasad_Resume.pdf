@@ -1,0 +1,45 @@
+
+
+KANISHKPRASAD
+4th-year Computer Science student specializing in Full-Stack Development and Backend Engineering
++919310656821kanishkprasad6@gmail.comLinkedInGitHub
+New Delhi, India
+PROFESSIONAL SUMMARY
+4th-year CS student (Exp. 2027) focused on Backend Engineering and Applied AI. Experienced in delivering scalable
+web applications and developer tools using Python, FastAPI, and React. Passionate about AI integration—currently
+building a custom RAG data pipeline—backed by proficiency in Linux and secure DevOps workflows.
+EDUCATIONS
+|GN Group of InstitutesGreater Noida, India
+Bachelor of Technology in Engineering
+Sep 2023 - Present
+PROJECTS
+|GroundWork CLIWebsiteGithub
+Solo Developer
+Apr 2026 - May 2026
+Built and published an interactive CLI tool to PyPI that lets developers practice fixing real-world cybersecurity
+vulnerabilities (CVEs) directly in their terminal.
+Powered the CLI with a decoupled FastAPI REST backend hosted on Hugging Face, utilizing Docker for
+deployment and implementing IP rate limiting to ensure reliable, secure API traffic.
+Technologies / Tools Used:Python, FastAPI, Docker, PyPI, Hugging Face
+|Amazon Price TrackerWebsiteGithub
+Solo Developer
+Jan 2026 - Feb 2026
+Engineered a full-stack consumer tool to track online product prices and automate drop alerts, utilizing a
+React/TypeScript frontend and a FastAPI backend.
+Developed a robust backend for web scraping and background task queuing using PostgreSQL and Redis, alongside
+an intuitive React frontend with interactive data visualizations.
+Technologies / Tools Used:FastAPI, React, TypeScript, PostgreSQL, Redis, Web Scraping
+|MarketPulse DashboardWebsiteGithub
+Solo Developer
+Nov 2025 - Dec 2025
+Developed a real-time financial dashboard using Python and Streamlit to aggregate and visualize stock market
+trends, commodity prices, and currency exchange rates.
+Integrated multiple REST APIs and web scrapers for live data fetching.
+Optimized load times and reduced API costs by caching historical data in MongoDB.
+Technologies / Tools Used:Python, Streamlit, Pandas, MongoDB, REST APIs
+SKILLS
+Databases:PostgreSQL, MongoDB
+Frameworks & Libraries:FastAPI, Django, React.js, Flutter
+Languages:English, Hindi
+Programming Languages:Python, JavaScript, SQL, Dart
+Tools & Platforms:AWS, Docker, Git, Github, Postman, Linux, CI/CD
