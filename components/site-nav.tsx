@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { Menu, X, Terminal } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 
 const links = [
@@ -18,7 +18,11 @@ export function SiteNav() {
     <header className="fixed inset-x-0 top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur-md">
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
         <a href="#top" className="flex items-center gap-2 font-mono text-sm font-semibold tracking-tight">
-          <Terminal className="size-5 text-primary" aria-hidden="true" />
+          <span aria-hidden="true" className="flex size-6 items-center justify-center rounded-md border border-border/80 bg-black">
+            <svg viewBox="0 0 24 24" className="size-3.5 fill-none text-primary" stroke="currentColor" strokeWidth={3} strokeLinecap="round" strokeLinejoin="round">
+              <path d="M9 6L16 12L9 18" />
+            </svg>
+          </span>
           <span>kanishk.dev</span>
         </a>
 

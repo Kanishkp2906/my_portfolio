@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   description:
     'Python Developer & AI Engineer building high-performance backends and intelligent workflows with Python, FastAPI, and modern AI tooling.',
   generator: 'v0.app',
+  icons: {
+    icon: '/icon.svg?v=2',
+  },
 }
 
 export const viewport: Viewport = {

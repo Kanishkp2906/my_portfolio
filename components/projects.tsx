@@ -2,18 +2,11 @@ import { ArrowUpRight } from 'lucide-react'
 import { buttonVariants } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
 import { GithubIcon } from '@/components/brand-icons'
-import { ProjectCarousel } from '@/components/project-carousel'
 
 const projects = [
   {
     title: 'MarketPulse Dashboard',
     slug: 'marketpulse_dashboard',
-    images: [
-      'main.png',
-      'Screenshot from 2026-08-06 13-38-38.png',
-      'Screenshot from 2026-08-06 13-38-25.png',
-      'Screenshot from 2026-08-06 13-38-13.png',
-    ],
     period: 'Nov 2025 - Dec 2025',
     role: 'Solo Developer',
     description:
@@ -25,11 +18,6 @@ const projects = [
   {
     title: 'Groundwork CLI',
     slug: 'groundwork_cli',
-    images: [
-      'main.png',
-      'Screenshot from 2026-08-06 12-43-43.png',
-      'Screenshot from 2026-08-06 12-42-18.png',
-    ],
     period: 'Apr 2026 - May 2026',
     role: 'Solo Developer',
     description:
@@ -41,7 +29,6 @@ const projects = [
   {
     title: 'Amazon Price Tracker',
     slug: 'amazon_price_tracker',
-    images: ['main.png', 'Screenshot from 2026-08-06 13-39-17.png'],
     period: 'Jan 2026 - Feb 2026',
     role: 'Solo Developer',
     description:
@@ -69,77 +56,67 @@ export function Projects() {
 
         <div className="grid gap-8">
           {projects.map((project) => {
-            const imageSrc = project.images.map(
-              (file) => `/images/${project.slug}/${encodeURIComponent(file)}`,
-            )
-
             return (
               <article
                 key={project.title}
-                className="grid items-center gap-8 overflow-hidden rounded-xl border border-border bg-card md:grid-cols-2"
+                className="p-6 sm:p-8 border border-border bg-card"
               >
-                <div className="flex items-center justify-center p-4 sm:p-6">
-                  <ProjectCarousel images={imageSrc} title={project.title} />
-                </div>
+                <h3 className="text-xl font-semibold tracking-tight">
+                  {project.title}
+                </h3>
+                {project.period && (
+                  <p className="mt-1 font-mono text-xs text-muted-foreground">
+                    {project.period} — {project.role}
+                  </p>
+                )}
+                {project.description && (
+                  <p className="mt-3 text-pretty leading-relaxed text-muted-foreground">
+                    {project.description}
+                  </p>
+                )}
 
-                <div className="p-6 sm:p-8">
-                  <h3 className="text-xl font-semibold tracking-tight">
-                    {project.title}
-                  </h3>
-                  {project.period && (
-                    <p className="mt-1 font-mono text-xs text-muted-foreground">
-                      {project.period} — {project.role}
-                    </p>
-                  )}
-                  {project.description && (
-                    <p className="mt-3 text-pretty leading-relaxed text-muted-foreground">
-                      {project.description}
-                    </p>
-                  )}
+                {project.tags.length > 0 && (
+                  <ul className="mt-5 flex flex-wrap gap-2">
+                    {project.tags.map((tag) => (
+                      <li
+                        key={tag}
+                        className="rounded-md border border-border bg-secondary px-2.5 py-1 font-mono text-xs text-secondary-foreground"
+                      >
+                        {tag}
+                      </li>
+                    ))}
+                  </ul>
+                )}
 
-                  {project.tags.length > 0 && (
-                    <ul className="mt-5 flex flex-wrap gap-2">
-                      {project.tags.map((tag) => (
-                        <li
-                          key={tag}
-                          className="rounded-md border border-border bg-secondary px-2.5 py-1 font-mono text-xs text-secondary-foreground"
-                        >
-                          {tag}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-
-                  {(project.demo || project.github) && (
-                    <div className="mt-7 flex flex-wrap gap-3">
-                      {project.demo && (
-                        <a
-                          href={project.demo}
-                          target="_blank"
-                          rel="noreferrer"
-                          className={cn(buttonVariants({ size: 'sm' }), 'font-mono')}
-                        >
-                          Live Demo
-                          <ArrowUpRight className="size-4" />
-                        </a>
-                      )}
-                      {project.github && (
-                        <a
-                          href={project.github}
-                          target="_blank"
-                          rel="noreferrer"
-                          className={cn(
-                            buttonVariants({ variant: 'outline', size: 'sm' }),
-                            'font-mono',
-                          )}
-                        >
-                          <GithubIcon className="size-4" />
-                          GitHub
-                        </a>
-                      )}
-                    </div>
-                  )}
-                </div>
+                {(project.demo || project.github) && (
+                  <div className="mt-7 flex flex-wrap gap-3">
+                    {project.demo && (
+                      <a
+                        href={project.demo}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={cn(buttonVariants({ size: 'sm' }), 'font-mono')}
+                      >
+                        Live Demo
+                        <ArrowUpRight className="size-4" />
+                      </a>
+                    )}
+                    {project.github && (
+                      <a
+                        href={project.github}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={cn(
+                          buttonVariants({ variant: 'outline', size: 'sm' }),
+                          'font-mono',
+                        )}
+                      >
+                        <GithubIcon className="size-4" />
+                        GitHub
+                      </a>
+                    )}
+                  </div>
+                )}
               </article>
             )
           })}
