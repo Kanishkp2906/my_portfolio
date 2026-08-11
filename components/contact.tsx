@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, type FormEvent } from 'react'
-import { Mail, Check, ArrowRight } from 'lucide-react'
+import { Mail, Check, ArrowRight, Loader2 } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { GithubIcon, LinkedinIcon } from '@/components/brand-icons'
 
@@ -12,12 +12,30 @@ const socials = [
 ]
 
 export function Contact() {
-  const [sent, setSent] = useState(false)
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setSent(true)
+    const data = new FormData(e.currentTarget)
+    setStatus('sending')
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: data.get('name'),
+          email: data.get('email'),
+          message: data.get('message'),
+        }),
+      })
+      if (!response.ok) throw new Error('Request failed')
+      setStatus('sent')
+    } catch {
+      setStatus('error')
+    }
   }
+
+  const sent = status === 'sent'
 
   return (
     <section id="contact" className="border-t border-border py-24">
@@ -66,7 +84,7 @@ export function Contact() {
                 <p className="max-w-xs text-sm text-muted-foreground">
                   Thanks for reaching out — I&apos;ll reply to you shortly.
                 </p>
-                <Button variant="outline" className="font-mono" onClick={() => setSent(false)}>
+                <Button variant="outline" className="font-mono" onClick={() => setStatus('idle')}>
                   Send another
                 </Button>
               </div>
@@ -106,10 +124,24 @@ export function Contact() {
                     className="w-full resize-none rounded-md border border-input bg-background px-3 py-2 text-sm outline-none transition-colors placeholder:text-muted-foreground/70 focus:border-primary"
                   />
                 </Field>
-                <Button type="submit" size="lg" className="font-mono">
-                  Send Message
-                  <ArrowRight className="size-4" />
+                <Button type="submit" size="lg" className="font-mono" disabled={status === 'sending'}>
+                  {status === 'sending' ? (
+                    <>
+                      Sending
+                      <Loader2 className="size-4 animate-spin" />
+                    </>
+                  ) : (
+                    <>
+                      Send Message
+                      <ArrowRight className="size-4" />
+                    </>
+                  )}
                 </Button>
+                {status === 'error' && (
+                  <p className="text-sm text-destructive">
+                    Something went wrong — please try again or email me directly.
+                  </p>
+                )}
               </form>
             )}
           </div>
