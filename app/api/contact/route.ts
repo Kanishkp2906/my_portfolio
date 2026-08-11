@@ -1,7 +1,7 @@
 import { Resend } from 'resend'
 import { NextResponse } from 'next/server'
 
-const FROM = 'contact@kanishkprasad.dpdns.org'
+const FROM = 'contact@send.kanishkprasad.dpdns.org'
 const TO = 'kanishkprasad6@gmail.com'
 
 export async function POST(request: Request) {
