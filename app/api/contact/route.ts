@@ -1,7 +1,8 @@
 import { Resend } from 'resend'
 import { NextResponse } from 'next/server'
 
-const FROM = 'contact@kanishkprasad.dpdns.org'
+// 1. Match your exact verified subdomain or domain in Resend
+const FROM = 'Portfolio Contact <contact@kanishkprasad.dpdns.org>'
 const TO = 'kanishkprasad6@gmail.com'
 
 export async function POST(request: Request) {
@@ -58,7 +59,7 @@ export async function POST(request: Request) {
   const { data, error } = await resend.emails.send({
     from: FROM,
     to: [TO],
-    replyTo: email,
+    replyTo: email, // Supports both `replyTo` string or string[]
     subject: `Portfolio contact: ${name}`,
     text,
     html,
@@ -72,7 +73,7 @@ export async function POST(request: Request) {
     )
   }
 
-  return NextResponse.json({ ok: true })
+  return NextResponse.json({ ok: true, id: data?.id })
 }
 
 function escapeHtml(value: string) {
