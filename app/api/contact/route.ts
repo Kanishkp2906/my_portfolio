@@ -48,7 +48,7 @@ export async function POST(request: Request) {
         <strong>Name:</strong> ${escapeHtml(name)}
       </p>
       <p style="margin: 0 0 4px; font-size: 14px; color: #555;">
-        <strong>Email:</strong> <a href="mailto:${escapeHtml(email)}">${escapeHtml(email)}</a>
+        <strong>Email:</strong> ${escapeHtml(email)}
       </p>
       <div style="margin-top: 16px; padding: 16px; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 14px; white-space: pre-wrap; color: #111;">
         ${escapeHtml(message)}
