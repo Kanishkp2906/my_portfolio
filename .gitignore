@@ -43,3 +43,5 @@ Thumbs.db
 .stylelintcache
 coverage/
 .turbo/
+.agents
+skills-lock.json

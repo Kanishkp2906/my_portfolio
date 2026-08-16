@@ -10,7 +10,7 @@ export default function Page() {
   return (
     <>
       <SiteNav />
-      <main>
+      <main className="w-full max-w-full overflow-x-hidden">
         <Hero />
         <TechStack />
         <Projects />
