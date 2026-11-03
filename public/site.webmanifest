@@ -1,0 +1,40 @@
+{
+  "name": "Kanishk Prasad | Portfolio",
+  "short_name": "Kanishk Prasad",
+  "description": "Backend developer building backend APIs, data pipelines, and production-ready AI systems.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAFAFA",
+  "theme_color": "#FAFAFA",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-dark-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["portfolio", "technology", "software"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "View Work",
+      "short_name": "Work",
+      "description": "View my projects",
+      "url": "/#work",
+      "icons": [{ "src": "/icon-dark-32x32.png", "sizes": "32x32" }]
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Get in touch",
+      "url": "/#contact",
+      "icons": [{ "src": "/icon-dark-32x32.png", "sizes": "32x32" }]
+    }
+  ]
+}

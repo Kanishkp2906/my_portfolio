@@ -43,5 +43,20 @@ Thumbs.db
 .stylelintcache
 coverage/
 .turbo/
+*.tsbuildinfo
+
+# Local tooling / agent state
 .agents
+.claude/
+.vercel/
+
+# Non-portfolio artifacts (starters, duplicates, unused assets)
+project_logos/
+public/placeholder.jpg
+public/placeholder-logo.png
+public/placeholder-logo.svg
+public/placeholder-user.jpg
+public/placeholder.svg
+public/og-image.svg
+
 skills-lock.json
